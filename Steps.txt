@@ -1,0 +1,21 @@
+interface IVendor {
+	name:string;
+	..other details
+}
+
+2. implement IVendor in another class say Vendor
+3. Create object for vendor when user inputs details and store in local storage.
+
+
+----------------------------------------------
+
+
+Machine Test steps:
+
+-> whoever opens the page will be directed to guest page initially. If the user is an admin or registered user, the user has to click sign in from 
+	the guest page and they will be re-directed to login page. Based on the credentials entered, they will be landing on Admin page or Registered User page
+
+1. creation of guest page
+	sample outline in page-design.io file
+
+	
