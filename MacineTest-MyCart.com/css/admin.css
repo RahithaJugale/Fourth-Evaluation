@@ -1,0 +1,82 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar{
+    background-color: rgba(20, 68, 116);
+}
+
+#logout{
+    height: 30px;
+    width: 30px;
+}
+
+#nav-logout a{
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.navigation>ul{
+    list-style: none;
+}
+
+li{
+    padding: 20px;
+}
+
+.nav-col{
+    background-color: black;
+    padding-top: 40px;
+    height: 600px;
+}
+
+.navigation ul li a{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul li:hover{
+background-color: rgba(255, 255, 255, 0.119);
+}
+
+#cat-img{
+    padding: 2px;
+    background-color: white;
+    height: 20px;
+    width: 20px;
+}
+
+#category, #products, #offers, #addCategory{
+    display: none;
+}
+
+#additems{
+    height: 100px;
+    width: 100px;
+    margin-top: 7px;
+}
+
+.admin-icons{
+    background-color: rgba(248, 249, 250, 0.5);
+    width: 200px;
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 3px 3px white;
+}
+
+.admin-icons:hover{
+    background-color: rgba(0, 0, 0, 0.185);
+    transform: scale(1.2); 
+    box-shadow: 0 0 3px 3px inset white;
+}
+
+.cat-table{
+    margin-top: 100px;
+}
