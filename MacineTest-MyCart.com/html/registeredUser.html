@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to MyCart.com</title>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/registeredUser.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
-    <script src="https://kit.fontawesome.com/7f6f2940c6.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-    <script src="../js/index.js"></script>
+    <script src="../js/registeredUser.js"></script>
 </head>
 
 <body>
@@ -26,10 +26,13 @@
     <nav class="navbar">
         <div class="container">
             <div class="row nav-row">
+                <div class="col pt-1">
+                    <a href="#"><img src="../images/menuicon.png" id="menuicon" alt="MenuIcon" class="rounded"></a>
+                </div>
                 <div class="col-2">
                     <a class="navbar-brand" href="#">MyCart.com</a>
                 </div>
-                <div class="col-5">
+                <div class="col-4">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
                 <div class="col pt-1">
@@ -41,77 +44,25 @@
                 <div class="col pt-1">
                     <a class="navOptions" href="#">Products</a>
                 </div>
-                <div class="col pt-1">
-                    <a class="navOptions" id="signupoption" href="#">Sign Up</a>
-                </div>
-                <div class="col pt-1">
-                    <a class="navOptions" id="signinoption" href="#">Sign In</a>
+                <div class="col-2 pt-1" id="nav-logout">
+                    <img src="../images/logout1.png" alt="logout" id="logout" class="rounded">
+                    <a href="./index.html">Sign Out</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!--SIGN IN form-->
-
-    <div class="container w-25" id="signin">
-        <div class="row">
-            <img src="../images/logingif.gif" alt="Login Gif" id="logingif" class="rounded-circle">
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-2">
-                <label class="form-label"><img id="userlogo" class="rounded" src="../images/username.jpg" alt=""></label>
-            </div>
-            <div class="col-md">
-                <input type="text" class="form-control" placeholder="Email/Phone Number" id="signInUser" required>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-2">
-                <label class="form-label"><img id="passlogo" class="rounded" src="../images/password.png" alt=""></label>
-            </div>
-            <div class="col-md">
-                <input type="password" class="form-control" placeholder="Password" id="mypass" required>
-            </div>
-        </div>
-        <div class="row mt-4 mb-4 ms-5 me-5">
-            <button class="btn btn-default bg-primary mt-2 mb-4 mybtn" type="submit" id="loginbtn">Login</button>
-        </div>
-    </div> 
-
-    <!--SIGN UP form-->
-    <div class="container w-25" id="signup">
-        <div class="row">
-            <h3 class="p-4">Sign Up!</h3>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-1">
-                <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="col-md">
-                <input type="tel" class="form-control" placeholder="Mobile Number" id="phoneSignUp" required>
-            </div>
-            <p class="error" id="signupPhoneError"></p>
-        </div>
-        <div class="row mt-2">
-            <div class="col-md-1">
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="col-md">
-                <input type="email" class="form-control" placeholder="Email" id="emailSignUp" required>
-            </div>
-            <p class="error" id="signupEmailError"></p>
-        </div>
-        <div class="row mt-2">
-            <div class="col-md-1">
-                <i class="fa-solid fa-lock"></i>
-            </div>
-            <div class="col-md">
-                <input type="password" class="form-control" placeholder="Password" id="passwordSignUp" required>
-            </div>
-            <p class="error" id="signupPassError"></p>
-        </div>
-        <div class="row mt-4 mb-4 ms-5 me-5">
-            <button class="btn btn-default bg-primary mt-2 mb-4 mybtn" type="submit" onclick="register()" id="registerbtn">Register</button>
+    <!--Left side options-->
+    <div class="container-fluid nav-col w-25">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#" id="prevOrders">Previous Ordes</a>
+                </li>
+                <li>
+                    <a href="#" id="myCart">My Cart</a>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -125,7 +76,8 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" id="carousel-img1" src="https://m.media-amazon.com/images/I/71AXiaTe86L._SL1500_.jpg" alt="First slide">
+                    <img class="d-block w-100" id="carousel-img1"
+                        src="https://m.media-amazon.com/images/I/71AXiaTe86L._SL1500_.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="../images/categories.png" alt="Second slide">
@@ -160,16 +112,26 @@
     <!--About Us-->
     <div class="container-fluid" id="aboutUs">
         <h2 class="p-3 text-white pt-5">About Us</h2>
-        <p class="text-white p-5 pt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Etiam non quam lacus suspendisse faucibus interdum posuere. Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit. Nam at lectus urna duis. At auctor urna nunc id. Integer malesuada nunc vel risus. Odio aenean sed adipiscing diam donec adipiscing. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Arcu ac tortor dignissim convallis aenean et. Libero enim sed faucibus turpis. Ut pharetra sit amet aliquam id. Proin fermentum leo vel orci. Consequat interdum varius sit amet mattis. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Non blandit massa enim nec dui.</p>
+        <p class="text-white p-5 pt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum. Etiam non quam lacus suspendisse faucibus interdum posuere.
+            Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit. Nam at lectus urna duis. At auctor
+            urna nunc id. Integer malesuada nunc vel risus. Odio aenean sed adipiscing diam donec adipiscing. Quis
+            imperdiet massa tincidunt nunc pulvinar sapien et. Arcu ac tortor dignissim convallis aenean et. Libero enim
+            sed faucibus turpis. Ut pharetra sit amet aliquam id. Proin fermentum leo vel orci. Consequat interdum
+            varius sit amet mattis. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Non blandit massa enim
+            nec dui.</p>
     </div>
-    
+
     <!--Help-->
     <div class="container-fluid" id="help">
         <h2 class="p-3 pt-4 border-bottom">Help</h2>
         <div class="row">
             <div class="col p-5 pt-0">
                 <h4 class="pb-2">Contact Us</h4>
-                <p class="ps-3"><i>Developer:    Rahitha Jugale</i></p>
+                <p class="ps-3"><i>Developer: Rahitha Jugale</i></p>
                 <p class="ps-3"><i>Phone Number: 9876567890</i></p>
             </div>
             <div class="col">

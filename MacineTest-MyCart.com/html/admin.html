@@ -10,9 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="../js/adminjs.js"></script>
-        <script src="../js/admin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        
 </head>
 
 <body>
@@ -21,7 +20,7 @@
             <a class="navbar-brand" href="#">MyCart.com</a>
             <div id="nav-logout">
                 <img src="../images/logout1.png" alt="logout" id="logout" class="rounded">
-                <a href="#">Sign Out</a>
+                <a href="./index.html">Sign Out</a>
             </div>
         </div>
     </nav>
@@ -164,13 +163,190 @@
                 </table>
             </form>
         </div>
-        <div class="col-9" id="addCategory">
+        <div class="col-9" id="editCategory">
             <h2 class="p-3">Edit Category</h2>
             
         </div>
+        <div class="col-9" id="deleteCategory">
+            <h2 class="p-3">Delete Category</h2>
+            
+        </div>
+        <div class="col-9" id="viewCategory">
+            <h2 class="p-3">View Category</h2>
+        </div>
+
+        <!--PRODUCTS-->
+        <div class="col-9" id="addProduct">
+            <h2 class="p-3">Add Product</h2>
+            <form action="#">
+                <table class="table prod-table">
+                    <tr>
+                        <td>
+                            <label class="form-label">Name</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="productname" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Code</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="productcode" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Specifications</label>
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="20" class="form-control" id="productSpecs" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Description</label>
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="20" class="form-control" id="productDescription" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Price</label>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="productprice" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Category</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="productcategory" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-secondary text-white" type="submit" id="ProdSumbit">Submit</button>
+                            <button class="btn btn-secondary text-white" type="reset">Clear</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col-9" id="editProduct">
+            <h2 class="p-3">Edit Product</h2>
+            
+        </div>
+        <div class="col-9" id="deleteProduct">
+            <h2 class="p-3">Delete Product</h2>
+            
+        </div>
+        <div class="col-9" id="viewProduct">
+            <h2 class="p-3">View Product</h2>
+        </div>
+        
+        <!--OFFERS-->
+        <div class="col-9" id="addOffers">
+            <h2 class="p-3">Add Offer</h2>
+            <form action="#">
+                <table class="table offer-table">
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer Name</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="offername" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Creation Date</label>
+                        </td>
+                        <td>
+                            <input type="date" class="form-control" id="offercreationdate" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Product name / Code</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="offerProductName" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Discount %</label>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="offerDiscount" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer Description</label>
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="20" class="form-control" id="offerDescription" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer Start Date</label>
+                        </td>
+                        <td>
+                            <input type="date" class="form-control" id="offerstartdate" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer End Date</label>
+                        </td>
+                        <td>
+                            <input type="date" class="form-control" id="offerenddate" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-secondary text-white" type="submit" id="OfferSumbit">Submit</button>
+                            <button class="btn btn-secondary text-white" type="reset">Clear</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col-9" id="editOffers">
+            <h2 class="p-3">Edit Offer</h2>
+            
+        </div>
+        <div class="col-9" id="deleteOffers">
+            <h2 class="p-3">Delete Offer</h2>
+            
+        </div>
+        <div class="col-9" id="viewOffers">
+            <h2 class="p-3">View Offer</h2>
+        </div>
+
+
+
+
+
+
 
 
     </div>
-</body>
+
+
+
+
+        <script src="../js/adminjs.js"></script>
+        <script src="../js/admin.js"></script>
+    </body>
 
 </html>

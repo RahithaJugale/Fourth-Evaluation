@@ -21,15 +21,160 @@ $(document).ready(function(){
         $('#offers').fadeIn();
     })
     
+
+    //Category - click options
     $('#addCat').click(function(){
         $('#category').fadeOut();
         $('#products').fadeOut();
         $('#offers').fadeOut();
         $('#addCategory').fadeIn();
     })
+    
+    $('#editCat').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeIn();
+    })
+    
+    $('#deleteCat').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#deleteCategory').fadeIn();
+    })
 
+    $('#viewCat').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeIn();
+    })
 
+    //Product - click options
+    $('#addProd').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeIn();
+    })
+    
+    $('#editProd').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeOut();
+        $('#editProduct').fadeIn();
+    })
+    
+    $('#deleteProd').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeOut();
+        $('#editProduct').fadeOut();
+        $('#deleteProduct').fadeIn();
+    })
+    
+    $('#viewProd').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeOut();
+        $('#editProduct').fadeOut();
+        $('#deleteProduct').fadeOut();
+        $('#viewProduct').fadeIn();
+    })
 
+    //Offers - click options
+    $('#addOffer').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeOut();
+        $('#editProduct').fadeOut();
+        $('#deleteProduct').fadeOut();
+        $('#viewProduct').fadeOut();
+        $('#addOffers').fadeIn();
+    })
+    
+    $('#editOffer').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeOut();
+        $('#editProduct').fadeOut();
+        $('#deleteProduct').fadeOut();
+        $('#viewProduct').fadeOut();
+        $('#addOffers').fadeOut();
+        $('#editOffers').fadeIn();
+    })
+    
+    $('#deleteOffer').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeOut();
+        $('#editProduct').fadeOut();
+        $('#deleteProduct').fadeOut();
+        $('#viewProduct').fadeOut();
+        $('#addOffers').fadeOut();
+        $('#editOffers').fadeOut();
+        $('#deleteOffers').fadeIn();
+    })
+    
+    $('#viewOffer').click(function(){
+        $('#category').fadeOut();
+        $('#products').fadeOut();
+        $('#offers').fadeOut();
+        $('#addCategory').fadeOut();
+        $('#editCategory').fadeOut();
+        $('#deleteCategory').fadeOut();
+        $('#viewCategory').fadeOut();
+        $('#addProduct').fadeOut();
+        $('#editProduct').fadeOut();
+        $('#deleteProduct').fadeOut();
+        $('#viewProduct').fadeOut();
+        $('#addOffers').fadeOut();
+        $('#editOffers').fadeOut();
+        $('#deleteOffers').fadeOut();
+        $('#viewOffers').fadeIn();
+    })
 
 
 
@@ -37,18 +182,19 @@ $(document).ready(function(){
 //-------------------------------------------------------------------------------------------------------------------
 
 
-
     $('#catSumbit').click(function(){
-            var categoryName = document.getElementById('#categoryname').value;
-            var categoryDescription = document.getElementById('#categoryDescription').value;
+            var categoryName = $('#categoryname').val();
+            var categoryDescription = $('#categoryDescription').val();
         
-            console.log(categoryName);
-            console.log(categoryDescription);
             localStorage.setItem("CategoryName", categoryName);
             localStorage.setItem("CategoryDescription", categoryDescription);
-        
+            $('#categoryname').val() = '';
+            $('#categoryDescription').val() = '';
+            alert("Category Added");
+            $('#category').fadeIn();
     })
-
+    
+    
 
 
     /*

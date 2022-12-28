@@ -52,7 +52,8 @@ background-color: rgba(255, 255, 255, 0.119);
     width: 20px;
 }
 
-#category, #products, #offers, #addCategory{
+#category, #products, #offers, #addCategory, #editCategory, #viewCategory, #deleteCategory, #addProduct, #editProduct,
+#deleteProduct, #viewProduct, #addOffers, #editOffers, #deleteOffers, #viewOffers{
     display: none;
 }
 

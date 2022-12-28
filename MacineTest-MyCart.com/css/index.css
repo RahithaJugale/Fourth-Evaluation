@@ -1,0 +1,111 @@
+body{
+    font-family: "Righteous";
+}
+
+.navbar{
+    background-color: rgba(20, 68, 116);
+    font-family: "Righteous";
+}
+
+#nav-logout a{
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+}
+
+.navbar-brand{
+    color: white !important;
+}
+
+.navOptions{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-row{
+    width: 100%;
+}
+
+#signin{
+    float: right;
+    background-image: linear-gradient(white, rgba(20, 68, 116, 0.516));
+    display: none;
+    /*border-radius: 0 0 10px 10px;*/
+    height: 500px;
+    font-family: "Righteous";
+}
+
+#userlogo{
+    height: 30px;
+    width: 30px;
+    border: rgba(0, 0, 0, 0.297) solid 1px;
+    background-color: white;
+    margin-top: 3px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#passlogo{
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+    background-color: white;
+    border: rgba(0, 0, 0, 0.297) solid 1px;
+    margin-top: 4px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#carouselContainer{
+    height: 500px;
+    width: 100%;
+    float: left;
+}
+
+#carousel-img1{
+    height: 500px;
+}
+
+#aboutUs{
+    background-color: rgba(20, 68, 116, 116);
+    font-family: "Righteous";
+}
+
+#productRow{
+    font-family: "Righteous";
+}
+
+.productContainers{
+    margin: 30px;
+    border: 1px rgba(0, 0, 0, 0.155) solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.26);
+}
+
+#logingif{
+    padding-top: 30px;
+    height: 190px;
+    width: 180px;
+    margin: auto;
+}
+
+#help{
+    font-family: "Righteous";
+    background-color: black;
+    color: white;
+}
+
+#signup{
+    display: none;
+    float: right;
+    background-image: linear-gradient(white, rgba(20, 68, 116, 0.516));
+    height: 500px;
+    font-family: "Righteous";
+}
+
+#signup p{
+    margin-left: 36px;
+    padding: 5px;
+    font-size: 10px;
+    color: red;
+}
