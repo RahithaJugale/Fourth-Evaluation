@@ -4,17 +4,21 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to MyCart.com</title>
-    <link rel="stylesheet" href="../css/admin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        
+    <script src="../js/admin.js"></script>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body>
+
+    <!--Navigation header-->
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">MyCart.com</a>
@@ -24,6 +28,8 @@
             </div>
         </div>
     </nav>
+
+    <!--Left side options-->
     <div class="row">
         <div class="col-3 nav-col">
             <div class="navigation">
@@ -43,6 +49,8 @@
                 </ul>
             </div>
         </div>
+
+        <!--Category options - add, edit, delete view-->
         <div class="col-9" id="category">
             <div class="row">
                 <div class="col-4 ms-5">
@@ -73,6 +81,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Product options - add, edit, delete view-->
         <div class="col-9" id="products">
             <div class="row">
                 <div class="col-4 ms-5">
@@ -103,6 +113,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Offer options - add, edit, delete view-->
         <div class="col-9" id="offers">
             <div class="row">
                 <div class="col-4 ms-5">
@@ -133,6 +145,9 @@
                 </div>
             </div>
         </div>
+
+        <!--CATEGORY-->
+        <!--Add category-->
         <div class="col-9" id="addCategory">
             <h2 class="p-3">Add Category</h2>
             <form action="#">
@@ -143,6 +158,7 @@
                         </td>
                         <td>
                             <input type="text" class="form-control" id="categoryname" required>
+                            <p class="error" id="catNameError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -150,7 +166,9 @@
                             <label class="form-label">Description</label>
                         </td>
                         <td>
-                            <textarea rows="2" cols="20" class="form-control" id="categoryDescription" required></textarea>
+                            <textarea rows="2" cols="20" class="form-control" id="categoryDescription"
+                                required></textarea>
+                            <p class="error" id="catDescriptionError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -165,14 +183,57 @@
         </div>
         <div class="col-9" id="editCategory">
             <h2 class="p-3">Edit Category</h2>
-            
+            <div class="container" id="editCatContainer">
+                <p class="p-3 text-info">Select the category to be edited</p>
+                <table class="table responsive striped" id="catEditTable">
+
+                </table>
+            </div>
+            <form action="#" id="editCatForm">
+                <table class="table cat-table">
+                    <tr>
+                        <td>
+                            <label class="form-label">Name</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="categorynameEdit" required>
+                            <p class="error" id="catNameErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Description</label>
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="20" class="form-control" id="categoryDescriptionEdit"
+                                required></textarea>
+                            <p class="error" id="catDescriptionErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-secondary text-white" type="submit"
+                                id="catEditSumbit">Submit</button>
+                            <button class="btn btn-secondary text-white" type="reset">Clear</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
         <div class="col-9" id="deleteCategory">
             <h2 class="p-3">Delete Category</h2>
-            
+            <p class="p-3 text-info">Select the category to be deleted</p>
+            <table class="table responsive striped" id="catDeleteTable">
+
+            </table>
+
         </div>
         <div class="col-9" id="viewCategory">
-            <h2 class="p-3">View Category</h2>
+            <h2 class="p-3">Category List</h2>
+            <table class="table responsive striped" id="catViewTable">
+
+            </table>
         </div>
 
         <!--PRODUCTS-->
@@ -186,6 +247,7 @@
                         </td>
                         <td>
                             <input type="text" class="form-control" id="productname" required>
+                            <p class="error" id="prodNameError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -194,6 +256,7 @@
                         </td>
                         <td>
                             <input type="text" class="form-control" id="productcode" required>
+                            <p class="error" id="prodCodeError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -202,6 +265,7 @@
                         </td>
                         <td>
                             <textarea rows="2" cols="20" class="form-control" id="productSpecs" required></textarea>
+                            <p class="error" id="prodSpecsError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -209,7 +273,9 @@
                             <label class="form-label">Description</label>
                         </td>
                         <td>
-                            <textarea rows="2" cols="20" class="form-control" id="productDescription" required></textarea>
+                            <textarea rows="2" cols="20" class="form-control" id="productDescription"
+                                required></textarea>
+                            <p class="error" id="prodDescriptionError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -218,6 +284,7 @@
                         </td>
                         <td>
                             <input type="number" class="form-control" id="productprice" required>
+                            <p class="error" id="prodPriceError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -225,7 +292,10 @@
                             <label class="form-label">Category</label>
                         </td>
                         <td>
-                            <input type="text" class="form-control" id="productcategory" required>
+                            <select class="form-select" id="prodCatSelect" required>
+                                
+                            </select>
+                            <p class="error" id="prodCatError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -240,16 +310,96 @@
         </div>
         <div class="col-9" id="editProduct">
             <h2 class="p-3">Edit Product</h2>
-            
+            <div class="container" id="editProdContainer">
+                <p class="p-3 text-info">Select the product to be edited</p>
+                <table class="table responsive striped" id="prodEditTable">
+
+                </table>
+            </div>
+            <form action="#" id="prodEditForm">
+                <table class="table prod-table">
+                    <tr>
+                        <td>
+                            <label class="form-label">Name</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="productnameEdit" required>
+                            <p class="error" id="prodNameErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Code</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="productcodeEdit" required>
+                            <p class="error" id="prodCodeErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Specifications</label>
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="20" class="form-control" id="productSpecsEdit" required></textarea>
+                            <p class="error" id="prodSpecsErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Description</label>
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="20" class="form-control" id="productDescriptionEdit"
+                                required></textarea>
+                            <p class="error" id="prodDescriptionErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Price</label>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="productpriceEdit" required>
+                            <p class="error" id="prodPriceErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Category</label>
+                        </td>
+                        <td>
+                            <select class="form-select" id="prodCatSelectEdit" required>
+                                
+                            </select>
+                            <p class="error" id="prodCatErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-secondary text-white" type="submit" id="ProdEditSumbit">Submit</button>
+                            <button class="btn btn-secondary text-white" type="reset">Clear</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
         <div class="col-9" id="deleteProduct">
             <h2 class="p-3">Delete Product</h2>
-            
+            <p class="p-3 text-info">Select the product to be deleted</p>
+            <table class="table responsive striped" id="prodDeleteTable">
+
+            </table>
+
         </div>
         <div class="col-9" id="viewProduct">
-            <h2 class="p-3">View Product</h2>
+            <h2 class="p-3">Product List</h2>
+            <table class="table responsive striped" id="prodViewTable">
+
+            </table>
         </div>
-        
+
         <!--OFFERS-->
         <div class="col-9" id="addOffers">
             <h2 class="p-3">Add Offer</h2>
@@ -261,6 +411,7 @@
                         </td>
                         <td>
                             <input type="text" class="form-control" id="offername" required>
+                            <p class="error" id="offernameError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -268,7 +419,7 @@
                             <label class="form-label">Creation Date</label>
                         </td>
                         <td>
-                            <input type="date" class="form-control" id="offercreationdate" required>
+                            <input type="date" class="form-control" id="offercreationdate" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -276,7 +427,10 @@
                             <label class="form-label">Product name / Code</label>
                         </td>
                         <td>
-                            <input type="text" class="form-control" id="offerProductName" required>
+                            <select class="form-select" id="offerProdSelect" required>
+                                
+                            </select>
+                            <p class="error" id="offerProdSelError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -285,6 +439,7 @@
                         </td>
                         <td>
                             <input type="number" class="form-control" id="offerDiscount" required>
+                            <p class="error" id="offerDiscountError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -293,6 +448,7 @@
                         </td>
                         <td>
                             <textarea rows="2" cols="20" class="form-control" id="offerDescription" required></textarea>
+                            <p class="error" id="offerDescriptionError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -301,6 +457,7 @@
                         </td>
                         <td>
                             <input type="date" class="form-control" id="offerstartdate" required>
+                            <p class="error" id="offerStartDateError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -309,6 +466,7 @@
                         </td>
                         <td>
                             <input type="date" class="form-control" id="offerenddate" required>
+                            <p class="error" id="offerEndDateError"></p>
                         </td>
                     </tr>
                     <tr>
@@ -323,14 +481,102 @@
         </div>
         <div class="col-9" id="editOffers">
             <h2 class="p-3">Edit Offer</h2>
-            
+            <div class="container" id="editOfferContainer">
+                <p class="p-3 text-info">Select the offer to be edited</p>
+                <table class="table responsive striped" id="offerEditTable">
+
+                </table>
+            </div>
+            <form action="#" id="offerEditForm">
+                <table class="table offer-table">
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer Name</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="offernameEdit" required>
+                            <p class="error" id="offernameErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Creation Date</label>
+                        </td>
+                        <td>
+                            <input type="date" class="form-control" id="offercreationdateEdit" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Product name / Code</label>
+                        </td>
+                        <td>
+                            <select class="form-select" id="offerProdSelectEdit" required>
+                                
+                            </select>
+                            <p class="error" id="offerProdSelErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Discount %</label>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="offerDiscountEdit" required>
+                            <p class="error" id="offerDiscountErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer Description</label>
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="20" class="form-control" id="offerDescriptionEdit" required></textarea>
+                            <p class="error" id="offerDescriptionErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer Start Date</label>
+                        </td>
+                        <td>
+                            <input type="date" class="form-control" id="offerstartdateEdit" required>
+                            <p class="error" id="offerStartDateErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">Offer End Date</label>
+                        </td>
+                        <td>
+                            <input type="date" class="form-control" id="offerenddateEdit" required>
+                            <p class="error" id="offerEndDateErrorEdit"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-secondary text-white" type="submit" id="OfferEditSubmit">Submit</button>
+                            <button class="btn btn-secondary text-white" type="reset">Clear</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
         </div>
         <div class="col-9" id="deleteOffers">
             <h2 class="p-3">Delete Offer</h2>
-            
+            <p class="p-3 text-info">Select the offer to be deleted</p>
+            <table class="table responsive striped" id="offerDeleteTable">
+
+            </table>
+
         </div>
         <div class="col-9" id="viewOffers">
-            <h2 class="p-3">View Offer</h2>
+            <h2 class="p-3">Offer List</h2>
+            <table class="table responsive striped" id="offerViewTable">
+
+            </table>
         </div>
 
 
@@ -345,8 +591,7 @@
 
 
 
-        <script src="../js/adminjs.js"></script>
-        <script src="../js/admin.js"></script>
-    </body>
+
+</body>
 
 </html>

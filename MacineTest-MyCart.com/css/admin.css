@@ -1,9 +1,10 @@
 body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Righteous';
 }
 
 .navbar{
     background-color: rgba(20, 68, 116);
+    width: 100%;
 }
 
 #logout{
@@ -15,10 +16,12 @@ body{
     text-decoration: none;
     color: white;
     padding-left: 5px;
+    font-family: 'Righteous';
 }
 
 .navbar-brand{
     color: white;
+    font-family: 'Righteous';
 }
 
 .navigation>ul{
@@ -33,6 +36,7 @@ li{
     background-color: black;
     padding-top: 40px;
     height: 600px;
+    font-family: 'Righteous';
 }
 
 .navigation ul li a{
@@ -55,6 +59,7 @@ background-color: rgba(255, 255, 255, 0.119);
 #category, #products, #offers, #addCategory, #editCategory, #viewCategory, #deleteCategory, #addProduct, #editProduct,
 #deleteProduct, #viewProduct, #addOffers, #editOffers, #deleteOffers, #viewOffers{
     display: none;
+    font-family: 'Righteous';
 }
 
 #additems{
@@ -80,4 +85,35 @@ background-color: rgba(255, 255, 255, 0.119);
 
 .cat-table{
     margin-top: 100px;
+}
+
+.error{
+    color: red;
+    font-size: 10px;
+}
+
+#catViewTable, #catEditTable, #catDeleteTable, #prodViewTable, #prodDeleteTable, #prodEditTable, #offerViewTable, #offerDeleteTable, #offerEditTable{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    border: 1px rgba(0, 0, 0, 0.265) solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.194);
+}
+
+#catViewTable tr th, #catEditTable tr th, #catDeleteTable tr th, #prodViewTable tr th, #prodDeleteTable tr th, #prodEditTable tr th, #offerViewTable tr th, #offerDeleteTable tr th, #offerEditTable tr th{
+    background-color: rgba(0, 0, 0, 0.411);
+    color: #fff;
+    border: 1px rgba(0, 0, 0, 0.265) solid;
+    padding: 5px;
+}
+
+#catViewTable tr td, #catEditTable tr td, #catDeleteTable tr td, #prodViewTable tr td, #prodDeleteTable tr td, #prodEditTable tr td, #offerViewTable tr td, #offerDeleteTable tr td, #offerEditTable tr td{
+    border: 1px rgba(0, 0, 0, 0.265) solid;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#editCatForm, #prodEditForm, #offerEditForm{
+    display: none;
 }
